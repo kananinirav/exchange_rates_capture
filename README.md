@@ -99,10 +99,9 @@ open http://localhost:3000/
 ## APIs Endpoints
 
 1. Public API:
-   - curl --location --request GET 'http://localhost:3000/api/public/v1/currencies?from_country=INR&to_country=JPY&exchange_date=2023-02-07'
+   - ```curl --location --request GET 'http://localhost:3000/api/public/v1/currencies?from_country=INR&to_country=JPY&exchange_date=2023-02-07'```
 2. Admin API:
-   - curl --location --request POST 'http://localhost:3000/api/admin/v1/currencies' \
---form 'file=@"file_location/currency_rate.csv"'
+   - ```curl --location --request POST 'http://localhost:3000/api/admin/v1/currencies' \--form 'file=@"/Users/kananinirav/Documents/currency_rate.csv"'```
 
 ### Sample csv file
 
