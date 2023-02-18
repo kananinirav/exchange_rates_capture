@@ -33,12 +33,13 @@ Create prototype to capture exchange rates on day-to-day basis. Since currency e
 | id            | Integer    | ○           |             |                                   |
 | from_id       | Integer    |             | ○           | country table id as a foreign key |
 | to_id         | Integer    |             | ○           | country table id as a foreign key |
+| export_date   | Date       |             |             | data export date                  |
 | exchange_rate | Float      |             |             |                                   |
 | variance      | Float      |             |             | variance with previous record     |
 | created_at    | Time Stamp |             |             |                                   |
 | updated_at    | Time Stamp |             |             |                                   |
 
-- For performance improvement we will create clustered index for ( from_id, to_id, created_at )
+- For performance improvement we will create clustered index for ( from_id, to_id, export_date )
 
 ### Relations
 
