@@ -1,8 +1,8 @@
-# CODING Session
+# Exchange Rates Capture
 
 Create prototype to capture exchange rates on day-to-day basis. Since currency exchange rates varies on day to day basis, let’s create an app to capture the exchange rates on every day basis.
 
-## APIs
+## Tasks
 
 - Create APIs
   - Public API: For get data using from currency, to currency and date. If input date data not present return latest record
