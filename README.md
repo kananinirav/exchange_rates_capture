@@ -66,3 +66,49 @@ Create prototype to capture exchange rates on day-to-day basis. Since currency e
 - step 5: Create public API with parameters and write functional and unit test cases
   - Will create service for public api
 - step 6: Create list screen and add search filters and display data accordingly
+
+## Setup
+
+```sh
+# Clone Repository
+git clone https://github.com/kananinirav/exchange_rates_capture.git
+
+# Go to Folder
+cd ./exchange_rates_capture
+
+# Run bundle to install dependencies
+bundle
+
+# Create Database
+rails db:create
+
+# Run migration
+rails db:migrate
+
+# Default seed data
+rails db:seed
+
+# Finally start server
+rails s
+
+# Open web application
+open http://localhost:3000/
+
+```
+
+## APIs Endpoints
+
+1. Public API:
+   - curl --location --request GET 'http://localhost:3000/api/public/v1/currencies?from_country=INR&to_country=JPY&exchange_date=2023-02-07'
+2. Admin API:
+   - curl --location --request POST 'http://localhost:3000/api/admin/v1/currencies' \
+--form 'file=@"file_location/currency_rate.csv"'
+
+### Sample csv file
+
+```csv
+from,to,exchange_rate
+USD,INR,100.10
+USD,JPY,129.10
+INR,JPY,1.41
+```

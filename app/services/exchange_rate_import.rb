@@ -5,10 +5,12 @@ class ExchangeRateImport < ApplicationService
   require 'csv'
   def initialize(options)
     @file = options[:file]
+    @service_result = ServiceResult.new('Import Exchange Rate')
   end
 
   def call
     import_data
+    @service_result
   rescue => e
     Rails.logger.info e
   end
@@ -21,7 +23,7 @@ class ExchangeRateImport < ApplicationService
       exchange_record = prepare_hash(row)
       exchange_records << exchange_record
     end
-    CurrencyExchangeRate.import_data(exchange_records)
+    @service_result.data = CurrencyExchangeRate.import(exchange_records)
   end
 
   def prepare_hash(row)
