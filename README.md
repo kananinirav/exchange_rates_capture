@@ -2,7 +2,7 @@
 
 Create prototype to capture exchange rates on day-to-day basis. Since currency exchange rates varies on day to day basis, let’s create an app to capture the exchange rates on every day basis.
 
-## Tasks
+## APIs
 
 - Create APIs
   - Public API: For get data using from currency, to currency and date. If input date data not present return latest record
@@ -65,9 +65,3 @@ Create prototype to capture exchange rates on day-to-day basis. Since currency e
 - step 5: Create public API with parameters and write functional and unit test cases
   - Will create service for public api
 - step 6: Create list screen and add search filters and display data accordingly
-
-## Difficulties
-
-- If we have to many data for import then how we can manage variance calculations
-  - solution 1: We can create before create call back and create record one by one
-  - solution 2: We calculate variance in service and use bulk import ( we can use gem for bulk import like activerecord-import) (I'm think to use this because call back is also doing same thing on one by one record.)
